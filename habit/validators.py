@@ -45,7 +45,7 @@ class HabitPleasantValidator:
             raise ValidationError('У приятной привычки не может быть вознаграждения или связанной привычки')
 
 
-class HabitTimeDurationValidator:
+class CheckTime:
 
     def __init__(self, field):
         self.field = field
@@ -57,7 +57,7 @@ class HabitTimeDurationValidator:
             raise ValidationError('Выполнение привычки не может превышать 120 секунд')
 
 
-class CheckHabitValidator:
+class CheckInterval:
 
     def __init__(self, field):
         self.field = field
