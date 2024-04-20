@@ -1,19 +1,9 @@
 from rest_framework import serializers
 
-from habit.models import HabitTracker
-from habit.validators import (RelateRewardValidator, HabitRelatedHabitIsPleasantValidator, HabitPleasantValidator,
-                                CheckInterval, CheckTime)
+from users.models import User
 
 
-class HabitSerializer(serializers.ModelSerializer):
-    """ Сериалайзер для модели Habit """
+class UserSerializer(serializers.ModelSerializer):
     class Meta:
-        model = HabitTracker
+        model = User
         fields = '__all__'
-        validators = [
-            RelateRewardValidator(field1='related_habit', field2='reward'),
-            HabitRelatedHabitIsPleasantValidator(field1='related_habit', field2='is_pleasant'),
-            HabitPleasantValidator(field1='related_habit', field2='reward', field3='is_pleasant'),
-            CheckTime(field='duration'),
-            CheckInterval(field='periodicity')
-        ]
