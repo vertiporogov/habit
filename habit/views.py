@@ -2,6 +2,7 @@ from rest_framework.generics import CreateAPIView, ListAPIView, RetrieveAPIView,
 from rest_framework.permissions import IsAuthenticated
 
 from habit.models import HabitTracker
+from habit.pagination import HabitPagination
 from habit.permissions import IsOwner
 from habit.serializers import HabitSerializer
 
@@ -14,6 +15,7 @@ class HabitCreateAPIView(CreateAPIView):
 class HabitListAPIView(ListAPIView):
     serializer_class = HabitSerializer
     permission_classes = [IsAuthenticated, IsOwner]
+    pagination_class = HabitPagination
 
     def get_queryset(self):
         user = self.request.user
@@ -54,3 +56,4 @@ class PublicHabitListAPIView(ListAPIView):
     serializer_class = HabitSerializer
     queryset = HabitTracker.objects.filter(is_public=True)
     permission_classes = [IsAuthenticated]
+    pagination_class = HabitPagination
