@@ -2,7 +2,7 @@ from rest_framework import serializers
 
 from habit.models import HabitTracker
 from habit.validators import (RelateRewardValidator, HabitRelatedHabitIsPleasantValidator, HabitPleasantValidator,
-                                CheckInterval, CheckTime)
+                              CheckInterval, CheckTime)
 
 
 class HabitSerializer(serializers.ModelSerializer):
