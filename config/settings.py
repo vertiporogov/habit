@@ -149,6 +149,15 @@ SIMPLE_JWT = {
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
 }
 
+CELERY_TIMEZONE = 'Europe/Moscow'
+
+CELERY_BEAT_SCHEDULE = {
+    'task-name': {
+        'task': 'habit.tasks.send_message_habit',
+        'shedule': timedelta(days=1)
+    }
+}
+
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:8000',
 ]
