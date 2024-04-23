@@ -154,7 +154,7 @@ CELERY_TIMEZONE = 'Europe/Moscow'
 CELERY_BEAT_SCHEDULE = {
     'task-name': {
         'task': 'habit.tasks.send_message_habit',
-        'shedule': timedelta(days=1)
+        'schedule': timedelta(days=1)
     }
 }
 
