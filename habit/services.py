@@ -37,3 +37,5 @@ def create_bot_telegram(chat_id, text):
             'text': text
         }
     )
+    print(f'chat_id={chat_id}, text={text}')
+    print('Отправлен запрос на отправку сообщения')
