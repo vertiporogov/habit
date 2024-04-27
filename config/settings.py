@@ -89,7 +89,6 @@ DATABASES = {
         'NAME': 'habit2',
         'USER': 'postgres',
         'PASSWORD': 12345,
-        'HOST': 'localhost',
         'PORT': '5432',
     }
 }
