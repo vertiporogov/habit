@@ -1,0 +1,14 @@
+stages:
+    - deploy
+
+Deploy to stage:
+    stage: deploy
+    script:
+      - cp $ENV_STAGE .env
+    target:
+      - develop
+    tags:
+      - dev
+
+#curl -L "https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.deb.sh" / sudo bash
+#sudo -E apt-get install gitlab-runner
